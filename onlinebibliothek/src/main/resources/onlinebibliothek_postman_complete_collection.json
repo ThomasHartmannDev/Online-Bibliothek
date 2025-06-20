@@ -1,0 +1,490 @@
+{
+  "info": {
+    "name": "OnlineBibliothek API - Full Collection",
+    "_postman_id": "12345-67890-abcdef-12345",
+    "description": "Complete API Collection for OnlineBibliothek Project with all endpoints documented.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Modules",
+      "item": [
+        {
+          "name": "Create Module",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Module Name\",\n  \"description\": \"Module Description\",\n  \"school\": {\n    \"id\": 1\n  }\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8080/modules/create",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "modules",
+                "create"
+              ]
+            }
+          },
+          "description": "Endpoint to create a new module. Requires module name, description, and associated school ID."
+        },
+        {
+          "name": "Get All Modules",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://localhost:8080/modules/getall",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "modules",
+                "getall"
+              ]
+            }
+          },
+          "description": "Fetches all modules in the system."
+        },
+        {
+          "name": "Get Module By ID",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://localhost:8080/modules/{id}",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "modules",
+                ":id"
+              ]
+            }
+          },
+          "description": "Fetch a specific module by its ID."
+        },
+        {
+          "name": "Update Module",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Updated Module Name\",\n  \"description\": \"Updated Description\",\n  \"school\": {\n    \"id\": 2\n  }\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8080/modules/{id}",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "modules",
+                ":id"
+              ]
+            }
+          },
+          "description": "Updates an existing module. Requires module ID and updated data."
+        },
+        {
+          "name": "Delete Module",
+          "request": {
+            "method": "DELETE",
+            "url": {
+              "raw": "http://localhost:8080/modules/{id}",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "modules",
+                ":id"
+              ]
+            }
+          },
+          "description": "Deletes a specific module by its ID."
+        }
+      ]
+    },
+    {
+      "name": "Users",
+      "item": [
+        {
+          "name": "Create User",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"User Name\",\n  \"email\": \"user@example.com\",\n  \"password\": \"securepassword\",\n  \"role\": \"STUDENT\",\n  \"schoolId\": 1\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8080/users/create",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "users",
+                "create"
+              ]
+            }
+          },
+          "description": "Endpoint to create a new user. Requires user details and associated school ID."
+        },
+        {
+          "name": "Get All Users",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://localhost:8080/users/getall",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "users",
+                "getall"
+              ]
+            }
+          },
+          "description": "Fetches all users in the system."
+        },
+        {
+          "name": "Get User By ID",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://localhost:8080/users/{id}",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "users",
+                ":id"
+              ]
+            }
+          },
+          "description": "Fetch a specific user by their ID."
+        },
+        {
+          "name": "Update User",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Updated User Name\",\n  \"email\": \"updateduser@example.com\",\n  \"password\": \"newsecurepassword\",\n  \"role\": \"ADMIN\",\n  \"schoolId\": 2\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8080/users/{id}",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "users",
+                ":id"
+              ]
+            }
+          },
+          "description": "Updates an existing user. Requires user ID and updated data."
+        },
+        {
+          "name": "Delete User",
+          "request": {
+            "method": "DELETE",
+            "url": {
+              "raw": "http://localhost:8080/users/{id}",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "users",
+                ":id"
+              ]
+            }
+          },
+          "description": "Deletes a specific user by their ID."
+        }
+      ]
+    },
+    {
+      "name": "Schools",
+      "item": [
+        {
+          "name": "Create School",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"School Name\",\n  \"address\": \"School Address\",\n  \"contactEmail\": \"school@example.com\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8080/schools/create",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "schools",
+                "create"
+              ]
+            }
+          },
+          "description": "Endpoint to create a new school. Requires school name, address, and contact email."
+        },
+        {
+          "name": "Get All Schools",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://localhost:8080/schools/getall",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "schools",
+                "getall"
+              ]
+            }
+          },
+          "description": "Fetches all schools in the system."
+        },
+        {
+          "name": "Get School By ID",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://localhost:8080/schools/{id}",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "schools",
+                ":id"
+              ]
+            }
+          },
+          "description": "Fetch a specific school by its ID."
+        },
+        {
+          "name": "Update School",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Updated School Name\",\n  \"address\": \"Updated Address\",\n  \"contactEmail\": \"updatedschool@example.com\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8080/schools/{id}",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "schools",
+                ":id"
+              ]
+            }
+          },
+          "description": "Updates an existing school. Requires school ID and updated data."
+        },
+        {
+          "name": "Delete School",
+          "request": {
+            "method": "DELETE",
+            "url": {
+              "raw": "http://localhost:8080/schools/{id}",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "schools",
+                ":id"
+              ]
+            }
+          },
+          "description": "Deletes a specific school by its ID."
+        }
+      ]
+    },
+    {
+      "name": "Resources",
+      "item": [
+        {
+          "name": "Create Resource",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"Title\": \"Resource Title\",\n  \"URL\": \"https://example.com/resource\",\n  \"module\": { \"id\": 1 },\n  \"uploadedBy\": { \"id\": 2 },\n  \"UserOwner\": { \"id\": 2 }\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8080/resources/create",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "resources",
+                "create"
+              ]
+            }
+          },
+          "description": "Endpoint to create a new resource. Requires title, URL, module ID, uploadedBy ID, and UserOwner ID."
+        },
+        {
+          "name": "Get All Resources",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://localhost:8080/resources/getall",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "resources",
+                "getall"
+              ]
+            }
+          },
+          "description": "Fetches all resources in the system."
+        },
+        {
+          "name": "Get Resource By ID",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://localhost:8080/resources/{id}",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "resources",
+                ":id"
+              ]
+            }
+          },
+          "description": "Fetch a specific resource by its ID."
+        },
+        {
+          "name": "Update Resource",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"Title\": \"Updated Resource Title\",\n  \"URL\": \"https://example.com/updated-resource\",\n  \"module\": { \"id\": 2 },\n  \"uploadedBy\": { \"id\": 3 },\n  \"UserOwner\": { \"id\": 3 }\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8080/resources/{id}",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "resources",
+                ":id"
+              ]
+            }
+          },
+          "description": "Updates an existing resource. Requires resource ID and updated data."
+        },
+        {
+          "name": "Delete Resource",
+          "request": {
+            "method": "DELETE",
+            "url": {
+              "raw": "http://localhost:8080/resources/{id}",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "resources",
+                ":id"
+              ]
+            }
+          },
+          "description": "Deletes a specific resource by its ID."
+        }
+      ]
+    }
+  ]
+}

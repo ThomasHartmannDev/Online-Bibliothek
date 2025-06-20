@@ -1,0 +1,22 @@
+spring:
+  application:
+     name: onlinebibliothek
+  datasource:
+   url: jdbc:postgresql://localhost:5432/onlinebibliothek
+   username: thomas
+   password: 123@123
+  flyway:
+   drop-first: false
+   create-schemas: false
+   locations: classpath:db/migration
+  jpa:
+   properties:
+    hibernate:
+     jdbc:
+      lob:
+       non_contextual_creation: true
+     physical_naming_strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+api:
+  security:
+    token:
+      secret: ${JWT_SECRET:my-secret-key}

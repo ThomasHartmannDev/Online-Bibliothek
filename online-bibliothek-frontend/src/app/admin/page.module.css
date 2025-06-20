@@ -1,0 +1,352 @@
+/* Container e temas globais */
+.container {
+    display: flex;
+    min-height: 100vh;
+    width: 100%;
+    font-family: sans-serif;
+  }
+  
+  .light {
+    background-color: #f0f2f5;
+    color: #333;
+  }
+  
+  .dark {
+    background-color: #1e1e1e;
+    color: #eee;
+  }
+  
+  /* Sidebar */
+  .sidebar {
+    width: 260px;
+    padding: 1rem;
+    background-color: inherit;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-right: 1px solid rgba(0, 0, 0, 0.1);
+  }
+  
+  .dark .sidebar {
+    border-right: 1px solid #444;
+  }
+  
+  .username {
+    font-weight: bold;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+  }
+  
+  .nav {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .navButton {
+    padding: 0.5rem;
+    background-color: rgba(0, 112, 243, 0.1);
+    border: none;
+    border-radius: 4px;
+    text-align: left;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    font-weight: bold;
+    color: inherit;
+  }
+  
+  .navButton:hover {
+    background-color: rgba(0, 112, 243, 0.2);
+  }
+  
+  .dark .navButton {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #fff;
+  }
+  
+  .dark .navButton:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+  
+  .themeToggleContainer {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .themeLabel {
+    font-weight: bold;
+    font-size: 0.9rem;
+  }
+  
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 24px;
+  }
+  
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0; 
+    left: 0; 
+    right: 0; 
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+    border-radius: 24px;
+  }
+  
+  .slider:before {
+    content: "";
+    position: absolute;
+    height: 18px;
+    width: 18px;
+    left: 3px;
+    bottom: 3px;
+    background-color: #fff;
+    transition: 0.4s;
+    border-radius: 50%;
+  }
+  
+  input:checked + .slider {
+    background-color: #0070f3;
+  }
+  
+  input:checked + .slider:before {
+    transform: translateX(26px);
+  }
+  
+  /* Conteúdo principal */
+  .mainContent {
+    flex: 1;
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    overflow-y: auto;
+  }
+  
+  .contentWrapper {
+    max-width: 800px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  
+  /* Bean - contêiner do card com mais padding */
+  .card {
+    background-color: inherit;
+    padding: 2.5rem;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  }
+  
+  .dark .card {
+    background-color: #2a2a2a;
+    box-shadow: 0 1px 3px rgba(255, 255, 255, 0.1);
+  }
+  
+  .section {
+    margin-bottom: 2rem;
+  }
+  
+  .createSchoolSection {
+    margin-top: 2rem;
+  }
+  
+  .schoolInfo p {
+    margin-bottom: 0.5rem;
+  }
+  
+  .schoolInfo h4 {
+    margin-bottom: 1rem;
+  }
+  
+  .divider {
+    border: none;
+    border-top: 1px solid rgba(0, 0, 0, 0.15);
+    margin: 1rem 0;
+  }
+  
+  .dark .divider {
+    border-top: 1px solid #444;
+  }
+  
+  /* Formulários */
+  .form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+  }
+  
+  .form input,
+  .form select,
+  .form button {
+    padding: 0.5rem;
+    border-radius: 4px;
+    background-color: transparent;
+    color: inherit;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+  }
+  
+  .dark .form input,
+  .dark .form select {
+    background-color: #333;
+    border: 1px solid #fff;
+    color: #fff;
+  }
+  
+  .form button {
+    background-color: #0070f3;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  .form button:hover {
+    background-color: #005bb5;
+  }
+  
+  /* Layout para usuários IT Support sem linhas divisórias */
+  .userTable {
+    width: 100%;
+    margin-top: 1rem;
+  }
+  
+  .tableHeader, .tableRow {
+    display: flex;
+    padding: 0.75rem 0;
+  }
+  
+  .tableHeader {
+    font-weight: bold;
+    border-bottom: none;
+  }
+  
+  .tableRow {
+    border-bottom: none;
+  }
+  
+  .tableCell {
+    flex: 1;
+  }
+  
+  /* Espaço para ações: botão alinhado à direita com gap */
+  .actionsHeader {
+    flex: 0 0 150px;
+    text-align: right;
+  }
+  
+  .actionsCell {
+    flex: 0 0 150px;
+    text-align: right;
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+  }
+  
+  /* Botões primário e de perigo */
+  .primaryButton {
+    background-color: #0070f3;
+    border: none;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  .primaryButton:hover {
+    background-color: #005bb5;
+  }
+  
+  .dangerButton {
+    background-color: #d9534f;
+    border: none;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  .dangerButton:hover {
+    background-color: #c9302c;
+  }
+  
+  /* Modal */
+  .modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .modalContent {
+    background-color: #fff;
+    color: #333;
+    padding: 1rem;
+    border-radius: 4px;
+    max-width: 90%;
+    width: 400px;
+    box-sizing: border-box;
+  }
+  
+  .dark .modalContent {
+    background-color: #333;
+    color: #eee;
+  }
+  
+  .modalContent h4 {
+    margin-bottom: 1rem;
+  }
+  
+  .modalContent p {
+    margin-bottom: 1rem;
+  }
+  
+  .modalContent input {
+    width: 100%;
+    padding: 0.4rem;
+    margin-bottom: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    background-color: #fff;
+    color: #333;
+  }
+  
+  .dark .modalContent input {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    color: #333;
+  }
+  
+  .modalActions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.5rem;
+  }
+  
+  .modalActions button {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
